@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
+  <script charset='UTF-8'>
+    window['adrum-start-time'] = new Date().getTime();
+    (function (config) {
+      config.appKey = 'EUM-AAB-AVJ';
+      config.adrumExtUrlHttp = 'http://cdn.appdynamics.com';
+      config.adrumExtUrlHttps = 'https://cdn.appdynamics.com';
+      config.beaconUrlHttp = 'http://eumserver-davidlopes44-u3m7yhob.srv.ravcloud.com:7001';
+      config.beaconUrlHttps = 'https://eumserver-davidlopes44-u3m7yhob.srv.ravcloud.com:7002';
+      config.xd = { enable: false };
+      config.spa = {
+        "spa2": true
+      };
+    })(window['adrum-config'] || (window['adrum-config'] = {}));
+    if ('https:' === document.location.protocol) {
+      document.write(unescape('%3Cscript')
+        + " src='https://cdn.appdynamics.com/adrum/adrum-4.4.3.717.js' "
+        + " type='text/javascript' charset='UTF-8'"
+        + unescape('%3E%3C/script%3E'));
+    } else {
+      document.write(unescape('%3Cscript')
+        + " src='http://cdn.appdynamics.com/adrum/adrum-4.4.3.717.js' "
+        + " type='text/javascript' charset='UTF-8'"
+        + unescape('%3E%3C/script%3E'));
+    }
+  </script>
+
   <meta charset="UTF-8">
   <title>Ionic App</title>
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -30,6 +57,7 @@
   <link href="build/main.css" rel="stylesheet">
 
 </head>
+
 <body>
 
   <!-- Ionic's root component and where the app will load -->
@@ -46,4 +74,5 @@
   <script src="build/main.js"></script>
 
 </body>
+
 </html>

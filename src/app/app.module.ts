@@ -21,7 +21,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {}, {
+      links: [
+        { component: HomePage, name: 'Home', segment: '' },
+        { component: AboutPage, name: 'About', segment: '' },
+        { component: ContactPage, name: 'Contact', segment: '' }
+      ]
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +40,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
